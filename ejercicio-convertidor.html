@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Convertidor</title>
+    </head>
+    <body>
+        <input type="text" id="celsius"> <!--Colocamos input (con atributos type e id) para que se ingresen los datos.-->
+
+        <span>El valor en kelvin es: <strong id="kelvin"></strong></span> <!--Mensaje que se verá en html con resultado en negritas -->
+        <span>El valor en fahrenheit es: <strong id="fahrenheit"></strong> </span> <!-- El mensaje que aparecerá en html con resultado en negritas-->
+        <button id="convertir">Convertir</button> <!-- Agregamos el botón, con su id -para después referenciarlo- con el que se enviarán los datos ingresados en el input-->
+
+        <script>
+            /*Esta es la parte del script. Aquí accedemos a nuestros datos a través del id. Para eficientar código se usa una función -como la que acabamos de ver-. Se accede al documento a través del id -convertir- y se añade el evento click, luego función anónima -de las que mueren después de ejecutar el código dentro de ellas-*/
+            document.getElementById("convertir").addEventListener("click", function(){
+            var celsius = parseFloat(document.getElementById("celsius").value)
+            document.getElementById("kelvin").textContent = '';
+            document.getElementById("fahrenheit").textContent = '';
+            document.getElementById("kelvin").textContent = celsius + 273.15;
+            document.getElementById("fahrenheit").textContent = celsius * 1.8000 + 32.00
+            });
+            /* En la línea 17 se establece la variable -celsius- con el parseado, se accede al documento con el id y usando -.value- para que se nos devuelva la propiedad del valor
+            En la línea 18 y 19 se accede a través del id -kelvin. fahrenheit- para que se ejecute la fórmula y se muestre la conversión.
+            En la línea 20 y 21 se establece la fórmula para obtener los grados kelvin y fahrenheit*/
+        
+        </script>
+    </body>
+</html>
